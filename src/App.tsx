@@ -3,137 +3,254 @@ import {
   ChakraProvider,
   Box,
   Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-  ColorModeProvider,
   Flex,
   Image,
   Center,
-  Wrap,
-  WrapItem,
-  IconButton,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  GridItem,
   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   Button
 } from "@chakra-ui/react"
 
-import IconosCandidatos from "./iconos-candidatos"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
-
-interface user{
-  dni:string
-}
-
-function retrieveDNI(dni:any){
-  console.log(dni);
-}
-function prueba(){
-  console.log("jeje")
-}
-
 export const App = () => (
-
-  <ChakraProvider theme = {theme}>
-    <Flex  justifyContent = "center" backgroundColor = "gray.100"  height = "100vh">
-      <Box marginTop = "50px"  boxShadow="dark-lg" p="0" rounded="md"  position = "absolute">
-        <Box
-          height = "620px"
-          width = "1000px"
-          backgroundImage = "url(https://i.pinimg.com/originals/06/55/80/065580938b36e4c049ec033745248216.jpg)"
-          padding = "15px"
-          position = "relative"
-        >
-          <Grid 
-            position = "relative"
-            height = "585px"
-            templateRows = "repeat(3, 1fr)"
-            templateColumns = "repeat(2, 1fr)"
-            gap = {4}>
-              <GridItem rowSpan={1}>
-              <Text 
-                fontSize = "38px"
-                fontWeight = "700"
-                fontFamily = "body">
-                Onpe
-              </Text>
-              </GridItem>
-              <GridItem rowSpan={2} colSpan={1}>
-                <Center marginTop="50px">
-                  <Image src = "/images/anfora.png" alt = "" boxSize = "320px">
-                  </Image>
-                </Center> 
-              </GridItem>
-              <GridItem rowSpan={3} colSpan={1}>
-                <Box padding = "10px" color = "white">
-                  <Text fontSize = "28px" fontWeight = "600">Elecciones generales 2021</Text>
-                </Box>
-                <Box padding = "10px" color = "white">
-                  <Text>Ingrese su número de DNI para empezar a votar</Text>
-                </Box>
-                <Box padding = "10px" color = "black">
-                  <FormControl id = "DNI" display = "inline-flex">
-                    <Input type="text" placeholder = "DNI" variant="outline" bg = "white" ref={(c) => retrieveDNI(c)}/>
-                    <Button marginLeft = "10px" bg = "cyan.200" type="submit" onClick = {()=>prueba()}>
-                      Continuar
-                    </Button>
-                  </FormControl>
-                </Box>
-              </GridItem>
-          </Grid>
+  <ChakraProvider>
+    <Flex 
+      height = "100%" 
+      width = "100%" 
+      position = "relative" 
+      display = "block"
+      userSelect = "none"
+      fontFamily = "sans-serif">
+      <Box 
+        backgroundImage = "url(/images/v4.jpg)" 
+        height = "750px" 
+        width = "full"  
+        backgroundPosition="center" 
+        backgroundRepeat="no-repeat" >
+        <Box 
+          height = "100px"
+          width = "full" 
+          position = "relative" >
+            <Center>
+              <Image src = "/images/logo5.png" alt = "" boxSize = "120px"/> 
+            </Center>
         </Box>
-        <Box backgroundColor = "white" height= "250px" padding = "10px" position = "relative">
-          <Text 
-            color = "black" 
-            position = "relative"
-            fontFamily = "serif"
-            fontSize = "26px"
-            fontWeight = "bold">
-              Candidatos
-          </Text>
+        <Box 
+          height = "310px" 
+          width = "full" 
+          position ="relative"  
+          display = "block">
           <Box 
-            overflowY="auto" 
-            height = "190px" 
-            width= "980px" 
-            outline = "auto" 
-            outlineColor = "gray.200" 
-            padding = "5px" 
-            bg = "orange.400"
-            css={{
-              '&::-webkit-scrollbar': {
-                width: '12px',
-              },
-              '&::-webkit-scrollbar-track': {
-                width: '6px',
-                background: "#f1f1f1"
-              },
-              '&::-webkit-scrollbar-thumb': {
-                background: "lightblue",
-                borderRadius: '24px',
-              },
-              }
-            }>
-            <IconosCandidatos/>
+            position = "relative" 
+            marginTop = "30px" 
+            display = "flex" 
+            justifyContent ="center">
+            <Text 
+              fontWeight = "700" 
+              fontSize = "58px" >
+              Vota online con Boxting
+            </Text>
+          </Box>
+          <Box 
+            width = "full" 
+            display = "flex" 
+            justifyContent ="center">
+            <Box  
+              position = "relative" 
+              width = "750px" 
+              display = "flex" 
+              justifyContent = "center">
+              <Text 
+                fontWeight = "400" 
+                fontSize = "40px">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex nihil ea,
+              </Text>
+            </Box>
+          </Box>
+          <Box 
+            width = "full" 
+            display = "flex" 
+            justifyContent ="center" >
+            <Box  
+              marginTop = "30px" 
+              position = "relative" 
+              width = "550px">
+              <FormControl id = "DNI" display = "inline-flex">
+                <Input 
+                  type="text" 
+                  variant="outline"  
+                  color='black' 
+                  _placeholder={{ color: 'gray.500' }} 
+                  placeholder = "Ingrese su correo electrónico" 
+                  bg = "white" 
+                  size = "lg"/>
+                <Button 
+                  marginLeft = "10px" 
+                  bg = "black" 
+                  type="submit" 
+                  size = "lg">
+                  Comenzar
+                </Button>
+              </FormControl>
+            </Box>
           </Box>
         </Box>
+        <Box 
+          width = "full" 
+          height = "450px" 
+          display = "flex" 
+          justifyContent = "center" 
+          position = "relative">
+            <Box width = "850px" height = "full">
+              <Image src= "/images/prueba2.png"></Image>
+            </Box>
+        </Box>
+      </Box>
+      <Box 
+        height = "720px" 
+        width = "full"  
+        backgroundColor = "white" 
+        display = "inline-flex" 
+        justifyContent = "center"
+        paddingTop = "190px">
+        <Box 
+          width = "480px" 
+          height = "480px" 
+          position = "relative" 
+          marginRight = "150px">
+            <Image src = "/images/voto4.png"></Image>
+        </Box>
+        <Box 
+          width = "400px" 
+          height = "460px" 
+          position = "relative"
+          display = "flex"
+          flexDirection = "column"
+          justifyContent = "center">
+          <Text 
+            fontWeight = "black" 
+            fontSize = "40px"
+            color = "black">
+              Empieza a votar desde cualquier lugar
+          </Text>
+          <Text 
+            marginTop = "15px"
+            fontSize = "20px"
+            fontWeight ="light"
+            color = "black">
+              Tan solo necesitas un dispositivo con internet, entrar a nuestro aplicativo web o móvil y empezar a votar por tu candidato.
+          </Text>
+        </Box>
+      </Box>
+      <Box
+        height = "640px" 
+        width = "full"  
+        backgroundColor = "gray.100" 
+        display = "inline-flex" 
+        justifyContent = "center"
+        paddingTop = "90px">
+        <Box 
+          width = "400px" 
+          height = "460px" 
+          position = "relative"
+          display = "flex"
+          flexDirection = "column"
+          justifyContent = "center"
+          marginRight = "150px">
+          <Text 
+            fontWeight = "800" 
+            fontSize = "40px" 
+            color = "black">
+              Aplicativo fácil de usar
+          </Text>
+          <Text 
+            marginTop = "15px"
+            fontSize = "20px"
+            fontWeight ="light"
+            color = "black">
+              Diseñado de forma que cualquier persona, sin importar su condición, pueda usar el aplicativo sin dificultad alguna
+          </Text>
+        </Box>      
+        <Box 
+          width = "480px" 
+          height = "480px" 
+          position = "relative" >
+            <Image src = "/images/prueba4.png"></Image>
+        </Box>      
+      </Box>
+      <Box 
+        height = "600px" 
+        width = "full"  
+        backgroundColor = "white" 
+        display = "inline-flex" 
+        justifyContent = "center"
+        paddingTop = "90px">
+        <Box 
+          width = "520px" 
+          height = "480px" 
+          position = "relative" 
+          marginRight = "150px">
+            <Image src = "/images/security2.png"></Image>
+        </Box>
+        <Box 
+          width = "400px" 
+          height = "460px" 
+          position = "relative"
+          display = "flex"
+          flexDirection = "column"
+          justifyContent = "center">
+          <Text 
+            fontWeight = "black" 
+            fontSize = "40px" 
+            color = "black">
+              Total seguridad e integridad
+          </Text>
+          <Text 
+            marginTop = "15px"
+            fontSize = "20px"
+            fontWeight ="light"
+            color = "black">
+              Gracias a la revolucionaria tecnología Blockchain, las votaciones realizadas por nuestros usuarios son 100% seguras e inmodificables 
+          </Text>
+        </Box>
+      </Box>
+      <Box 
+        height = "360px" 
+        width = "full"  
+        backgroundColor =  "white"
+        paddingTop = "60px"
+        display = "flex"
+        justifyContent = "center">
+          <Box 
+            width = "900px" 
+            height = "200px" 
+            display = "flex" 
+            alignItems = "center"
+            flexDirection = "column"
+            borderTop = "1px"
+            borderColor = "gray.400">
+            <Text 
+              color = "black" 
+              fontSize = "24px" 
+              fontWeight = "light" 
+              marginTop = "60px">
+              Votar nunca fue tan fácil, hasta ahora
+            </Text>
+            <FormControl 
+              display = "flex" 
+              justifyContent = "center" 
+              marginTop = "15px">
+              <Button 
+                bg = "pink.600" 
+                type="submit" 
+                size = "lg" 
+                justifySelf = "center"
+                alignSelf = "center">
+                Comenzar
+              </Button>
+            </FormControl>
+          </Box>
       </Box>
     </Flex>
-
   </ChakraProvider>
 )
 
